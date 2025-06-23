@@ -5,11 +5,11 @@ using System.Collections.Generic;
 
 namespace Dulcefacil.Infraestructura.AccesoDatos;
 
-public partial class ROLES
+public partial class Roles
 {
-    public int id_rol { get; set; }
+    public int ID_Rol { get; set; }
 
-    public string tipo { get; set; }
+    public string NombreRol { get; set; }
 
-    public virtual ICollection<USUARIO> id_usuario { get; set; } = new List<USUARIO>();
+    public virtual ICollection<Usuarios> Usuarios { get; set; } = new List<Usuarios>();
 }

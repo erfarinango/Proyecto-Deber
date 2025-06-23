@@ -17,27 +17,27 @@ public partial class DulcefacilDBContext : DbContext
     {
     }
 
-    public virtual DbSet<ACTIVIDAD> ACTIVIDAD { get; set; }
+    public virtual DbSet<Clientes> Clientes { get; set; }
 
-    public virtual DbSet<CONTACTO> CONTACTO { get; set; }
+    public virtual DbSet<Detalle_Pedido> Detalle_Pedido { get; set; }
 
-    public virtual DbSet<DETALLE> DETALLE { get; set; }
+    public virtual DbSet<Entregas> Entregas { get; set; }
 
-    public virtual DbSet<EMPRESA> EMPRESA { get; set; }
+    public virtual DbSet<Pedidos> Pedidos { get; set; }
 
-    public virtual DbSet<NOTIFICACION> NOTIFICACION { get; set; }
+    public virtual DbSet<PrecioProducto> PrecioProducto { get; set; }
 
-    public virtual DbSet<PRECIOS> PRECIOS { get; set; }
+    public virtual DbSet<Productos> Productos { get; set; }
 
-    public virtual DbSet<PRODUCTOS> PRODUCTOS { get; set; }
+    public virtual DbSet<Roles> Roles { get; set; }
 
-    public virtual DbSet<ROLES> ROLES { get; set; }
+    public virtual DbSet<Rutas> Rutas { get; set; }
 
-    public virtual DbSet<USUARIO> USUARIO { get; set; }
+    public virtual DbSet<TipoCliente> TipoCliente { get; set; }
 
-    public virtual DbSet<VENDEDOR> VENDEDOR { get; set; }
+    public virtual DbSet<Usuarios> Usuarios { get; set; }
 
-    public virtual DbSet<VENTA> VENTA { get; set; }
+    public virtual DbSet<Zonas> Zonas { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
@@ -45,216 +45,198 @@ public partial class DulcefacilDBContext : DbContext
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        modelBuilder.Entity<ACTIVIDAD>(entity =>
+        modelBuilder.Entity<Clientes>(entity =>
         {
-            entity.HasKey(e => e.id_actividad).HasName("PK__ACTIVIDA__DCD34883D9EDA6B8");
+            entity.HasKey(e => e.ID_Cliente).HasName("PK__Clientes__E005FBFF6E5A5350");
 
-            entity.Property(e => e.id_actividad).ValueGeneratedNever();
-            entity.Property(e => e.descripcion)
-                .HasMaxLength(255)
+            entity.Property(e => e.Dirección)
+                .HasMaxLength(150)
                 .IsUnicode(false);
-            entity.Property(e => e.tipo_venta)
+            entity.Property(e => e.Email)
+                .HasMaxLength(100)
+                .IsUnicode(false);
+            entity.Property(e => e.Nombre)
+                .IsRequired()
+                .HasMaxLength(100)
+                .IsUnicode(false);
+            entity.Property(e => e.Teléfono)
+                .HasMaxLength(20)
+                .IsUnicode(false);
+
+            entity.HasOne(d => d.ID_TipoClienteNavigation).WithMany(p => p.Clientes)
+                .HasForeignKey(d => d.ID_TipoCliente)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK__Clientes__ID_Tip__4D94879B");
+
+            entity.HasOne(d => d.ID_ZonaNavigation).WithMany(p => p.Clientes)
+                .HasForeignKey(d => d.ID_Zona)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK__Clientes__ID_Zon__4E88ABD4");
+        });
+
+        modelBuilder.Entity<Detalle_Pedido>(entity =>
+        {
+            entity.HasKey(e => e.ID_Detalle).HasName("PK__Detalle___B3E0CED36E6F02CF");
+
+            entity.Property(e => e.PrecioUnitario).HasColumnType("decimal(10, 2)");
+
+            entity.HasOne(d => d.ID_PedidoNavigation).WithMany(p => p.Detalle_Pedido)
+                .HasForeignKey(d => d.ID_Pedido)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK__Detalle_P__ID_Pe__59FA5E80");
+
+            entity.HasOne(d => d.ID_ProductoNavigation).WithMany(p => p.Detalle_Pedido)
+                .HasForeignKey(d => d.ID_Producto)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK__Detalle_P__ID_Pr__5AEE82B9");
+        });
+
+        modelBuilder.Entity<Entregas>(entity =>
+        {
+            entity.HasKey(e => e.ID_Entrega).HasName("PK__Entregas__FEDACB7FA126A112");
+
+            entity.Property(e => e.CoordenadasEntrega)
+                .HasMaxLength(100)
+                .IsUnicode(false);
+            entity.Property(e => e.EstadoEntrega)
                 .HasMaxLength(50)
                 .IsUnicode(false);
+            entity.Property(e => e.FechaEntrega).HasColumnType("datetime");
+
+            entity.HasOne(d => d.ID_PedidoNavigation).WithMany(p => p.Entregas)
+                .HasForeignKey(d => d.ID_Pedido)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK__Entregas__ID_Ped__628FA481");
+
+            entity.HasOne(d => d.ID_RepartidorNavigation).WithMany(p => p.Entregas)
+                .HasForeignKey(d => d.ID_Repartidor)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK__Entregas__ID_Rep__6383C8BA");
         });
 
-        modelBuilder.Entity<CONTACTO>(entity =>
+        modelBuilder.Entity<Pedidos>(entity =>
         {
-            entity.HasKey(e => e.id_contacto).HasName("PK__CONTACTO__099A52B864C00FCF");
+            entity.HasKey(e => e.ID_Pedido).HasName("PK__Pedidos__FD76807057EC080A");
 
-            entity.Property(e => e.id_contacto).ValueGeneratedNever();
-            entity.Property(e => e.apellido)
-                .HasMaxLength(100)
-                .IsUnicode(false);
-            entity.Property(e => e.identificacion)
-                .HasMaxLength(20)
-                .IsUnicode(false);
-            entity.Property(e => e.nombre)
-                .HasMaxLength(100)
-                .IsUnicode(false);
-            entity.Property(e => e.telefono)
-                .HasMaxLength(20)
-                .IsUnicode(false);
-
-            entity.HasOne(d => d.id_empresaNavigation).WithMany(p => p.CONTACTO)
-                .HasForeignKey(d => d.id_empresa)
-                .HasConstraintName("FK__CONTACTO__id_emp__412EB0B6");
-        });
-
-        modelBuilder.Entity<DETALLE>(entity =>
-        {
-            entity.HasKey(e => e.id_detalle).HasName("PK__DETALLE__4F1332DE4A690632");
-
-            entity.Property(e => e.id_detalle).ValueGeneratedNever();
-            entity.Property(e => e.precio).HasColumnType("decimal(10, 2)");
-
-            entity.HasOne(d => d.id_productoNavigation).WithMany(p => p.DETALLE)
-                .HasForeignKey(d => d.id_producto)
-                .HasConstraintName("FK__DETALLE__id_prod__52593CB8");
-
-            entity.HasOne(d => d.id_ventaNavigation).WithMany(p => p.DETALLE)
-                .HasForeignKey(d => d.id_venta)
-                .HasConstraintName("FK__DETALLE__id_vent__5165187F");
-        });
-
-        modelBuilder.Entity<EMPRESA>(entity =>
-        {
-            entity.HasKey(e => e.id_empresa).HasName("PK__EMPRESA__4A0B7E2C4567D7BD");
-
-            entity.Property(e => e.id_empresa).ValueGeneratedNever();
-            entity.Property(e => e.cedula_ruc)
-                .IsRequired()
-                .HasMaxLength(20)
-                .IsUnicode(false);
-            entity.Property(e => e.nombre)
-                .IsRequired()
-                .HasMaxLength(100)
-                .IsUnicode(false);
-        });
-
-        modelBuilder.Entity<NOTIFICACION>(entity =>
-        {
-            entity.HasKey(e => e.id_notificacion).HasName("PK__NOTIFICA__8270F9A55AD0B6EF");
-
-            entity.Property(e => e.id_notificacion).ValueGeneratedNever();
-            entity.Property(e => e.descripcion)
-                .HasMaxLength(255)
-                .IsUnicode(false);
-            entity.Property(e => e.nombre)
-                .HasMaxLength(100)
-                .IsUnicode(false);
-
-            entity.HasOne(d => d.id_actividadNavigation).WithMany(p => p.NOTIFICACION)
-                .HasForeignKey(d => d.id_actividad)
-                .HasConstraintName("FK__NOTIFICAC__id_ac__571DF1D5");
-
-            entity.HasOne(d => d.id_empresaNavigation).WithMany(p => p.NOTIFICACION)
-                .HasForeignKey(d => d.id_empresa)
-                .HasConstraintName("FK__NOTIFICAC__id_em__5812160E");
-        });
-
-        modelBuilder.Entity<PRECIOS>(entity =>
-        {
-            entity.HasKey(e => e.id_precio).HasName("PK__PRECIOS__A70EF6ED566178AA");
-
-            entity.Property(e => e.id_precio).ValueGeneratedNever();
-            entity.Property(e => e.detalle)
-                .HasMaxLength(255)
-                .IsUnicode(false);
-            entity.Property(e => e.precio).HasColumnType("decimal(10, 2)");
-
-            entity.HasOne(d => d.id_productoNavigation).WithMany(p => p.PRECIOS)
-                .HasForeignKey(d => d.id_producto)
-                .HasConstraintName("FK__PRECIOS__id_prod__45F365D3");
-
-            entity.HasOne(d => d.id_usuarioNavigation).WithMany(p => p.PRECIOS)
-                .HasForeignKey(d => d.id_usuario)
-                .HasConstraintName("FK__PRECIOS__id_usua__46E78A0C");
-        });
-
-        modelBuilder.Entity<PRODUCTOS>(entity =>
-        {
-            entity.HasKey(e => e.id_producto).HasName("PK__PRODUCTO__FF341C0D8E639D2C");
-
-            entity.Property(e => e.id_producto).ValueGeneratedNever();
-            entity.Property(e => e.categoria)
+            entity.Property(e => e.Estado)
                 .HasMaxLength(50)
                 .IsUnicode(false);
-            entity.Property(e => e.descripcion)
-                .HasMaxLength(255)
-                .IsUnicode(false);
-            entity.Property(e => e.nombre)
+            entity.Property(e => e.FechaPedido).HasColumnType("datetime");
+
+            entity.HasOne(d => d.ID_ClienteNavigation).WithMany(p => p.Pedidos)
+                .HasForeignKey(d => d.ID_Cliente)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK__Pedidos__ID_Clie__571DF1D5");
+        });
+
+        modelBuilder.Entity<PrecioProducto>(entity =>
+        {
+            entity.HasKey(e => e.ID_Precio).HasName("PK__PrecioPr__00F3F740DB965A6B");
+
+            entity.Property(e => e.Activo).HasDefaultValue(true);
+            entity.Property(e => e.Precio).HasColumnType("decimal(10, 2)");
+
+            entity.HasOne(d => d.ID_ProductoNavigation).WithMany(p => p.PrecioProducto)
+                .HasForeignKey(d => d.ID_Producto)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK__PrecioPro__ID_Pr__5441852A");
+        });
+
+        modelBuilder.Entity<Productos>(entity =>
+        {
+            entity.HasKey(e => e.ID_Producto).HasName("PK__Producto__9B4120E2859719B6");
+
+            entity.Property(e => e.Descripción).HasColumnType("text");
+            entity.Property(e => e.NombreProducto)
                 .IsRequired()
                 .HasMaxLength(100)
                 .IsUnicode(false);
         });
 
-        modelBuilder.Entity<ROLES>(entity =>
+        modelBuilder.Entity<Roles>(entity =>
         {
-            entity.HasKey(e => e.id_rol).HasName("PK__ROLES__6ABCB5E009D74020");
+            entity.HasKey(e => e.ID_Rol).HasName("PK__Roles__202AD220B80D3151");
 
-            entity.Property(e => e.id_rol).ValueGeneratedNever();
-            entity.Property(e => e.tipo)
+            entity.Property(e => e.NombreRol)
                 .IsRequired()
                 .HasMaxLength(50)
                 .IsUnicode(false);
         });
 
-        modelBuilder.Entity<USUARIO>(entity =>
+        modelBuilder.Entity<Rutas>(entity =>
         {
-            entity.HasKey(e => e.id_usuario).HasName("PK__USUARIO__4E3E04ADEABC427F");
+            entity.HasKey(e => e.ID_Ruta).HasName("PK__Rutas__4851E68B4557769C");
 
-            entity.Property(e => e.id_usuario).ValueGeneratedNever();
-            entity.Property(e => e.email)
-                .IsRequired()
+            entity.Property(e => e.Fecha).HasColumnType("datetime");
+            entity.Property(e => e.NombreRuta)
                 .HasMaxLength(100)
                 .IsUnicode(false);
-            entity.Property(e => e.password)
-                .IsRequired()
-                .HasMaxLength(255)
-                .IsUnicode(false);
 
-            entity.HasMany(d => d.id_rol).WithMany(p => p.id_usuario)
+            entity.HasOne(d => d.ID_RepartidorNavigation).WithMany(p => p.Rutas)
+                .HasForeignKey(d => d.ID_Repartidor)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK__Rutas__ID_Repart__66603565");
+
+            entity.HasMany(d => d.ID_Pedido).WithMany(p => p.ID_Ruta)
                 .UsingEntity<Dictionary<string, object>>(
-                    "USUARIO_ROL",
-                    r => r.HasOne<ROLES>().WithMany()
-                        .HasForeignKey("id_rol")
+                    "Ruta_Pedido",
+                    r => r.HasOne<Pedidos>().WithMany()
+                        .HasForeignKey("ID_Pedido")
                         .OnDelete(DeleteBehavior.ClientSetNull)
-                        .HasConstraintName("FK__USUARIO_R__id_ro__3C69FB99"),
-                    l => l.HasOne<USUARIO>().WithMany()
-                        .HasForeignKey("id_usuario")
+                        .HasConstraintName("FK__Ruta_Pedi__ID_Pe__6A30C649"),
+                    l => l.HasOne<Rutas>().WithMany()
+                        .HasForeignKey("ID_Ruta")
                         .OnDelete(DeleteBehavior.ClientSetNull)
-                        .HasConstraintName("FK__USUARIO_R__id_us__3B75D760"),
+                        .HasConstraintName("FK__Ruta_Pedi__ID_Ru__693CA210"),
                     j =>
                     {
-                        j.HasKey("id_usuario", "id_rol").HasName("PK__USUARIO___5895CFF36A6B9C55");
+                        j.HasKey("ID_Ruta", "ID_Pedido").HasName("PK__Ruta_Ped__57868E8CD87EE35F");
                     });
         });
 
-        modelBuilder.Entity<VENDEDOR>(entity =>
+        modelBuilder.Entity<TipoCliente>(entity =>
         {
-            entity.HasKey(e => e.id_vendedor).HasName("PK__VENDEDOR__0093030847063196");
+            entity.HasKey(e => e.ID_TipoCliente).HasName("PK__TipoClie__C0F4EA7CCAF6ABC2");
 
-            entity.Property(e => e.id_vendedor).ValueGeneratedNever();
-            entity.Property(e => e.apellido)
-                .HasMaxLength(100)
+            entity.Property(e => e.Descripcion)
+                .IsRequired()
+                .HasMaxLength(50)
                 .IsUnicode(false);
-            entity.Property(e => e.nombre)
-                .HasMaxLength(100)
-                .IsUnicode(false);
-            entity.Property(e => e.telefono)
-                .HasMaxLength(20)
-                .IsUnicode(false);
-
-            entity.HasOne(d => d.id_empresaNavigation).WithMany(p => p.VENDEDOR)
-                .HasForeignKey(d => d.id_empresa)
-                .HasConstraintName("FK__VENDEDOR__id_emp__4AB81AF0");
-
-            entity.HasOne(d => d.id_usuarioNavigation).WithMany(p => p.VENDEDOR)
-                .HasForeignKey(d => d.id_usuario)
-                .HasConstraintName("FK__VENDEDOR__id_usu__49C3F6B7");
         });
 
-        modelBuilder.Entity<VENTA>(entity =>
+        modelBuilder.Entity<Usuarios>(entity =>
         {
-            entity.HasKey(e => e.id_venta).HasName("PK__VENTA__459533BFC9A0974C");
+            entity.HasKey(e => e.ID_Usuario).HasName("PK__Usuarios__DE4431C53167EE2D");
 
-            entity.Property(e => e.id_venta).ValueGeneratedNever();
-            entity.Property(e => e.observaciones)
+            entity.Property(e => e.Contraseña)
+                .IsRequired()
                 .HasMaxLength(255)
                 .IsUnicode(false);
-            entity.Property(e => e.tipo_venta)
+            entity.Property(e => e.NombreUsuario)
+                .IsRequired()
+                .HasMaxLength(50)
+                .IsUnicode(false);
+
+            entity.HasOne(d => d.ID_RolNavigation).WithMany(p => p.Usuarios)
+                .HasForeignKey(d => d.ID_Rol)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK__Usuarios__ID_Rol__5FB337D6");
+        });
+
+        modelBuilder.Entity<Zonas>(entity =>
+        {
+            entity.HasKey(e => e.ID_Zona).HasName("PK__Zonas__81349323AB383065");
+
+            entity.Property(e => e.Ciudad)
                 .HasMaxLength(100)
                 .IsUnicode(false);
-            entity.Property(e => e.total).HasColumnType("decimal(10, 2)");
-
-            entity.HasOne(d => d.id_empresaNavigation).WithMany(p => p.VENTA)
-                .HasForeignKey(d => d.id_empresa)
-                .HasConstraintName("FK__VENTA__id_empres__4D94879B");
-
-            entity.HasOne(d => d.id_vendedorNavigation).WithMany(p => p.VENTA)
-                .HasForeignKey(d => d.id_vendedor)
-                .HasConstraintName("FK__VENTA__id_vended__4E88ABD4");
+            entity.Property(e => e.NombreZona)
+                .IsRequired()
+                .HasMaxLength(100)
+                .IsUnicode(false);
+            entity.Property(e => e.Provincia)
+                .HasMaxLength(100)
+                .IsUnicode(false);
         });
 
         OnModelCreatingPartial(modelBuilder);

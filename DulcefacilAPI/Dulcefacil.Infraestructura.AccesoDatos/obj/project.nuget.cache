@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "jjRRzFGP7C4=",
+  "dgSpecHash": "i4j2yUDVqK8=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Elian\\Documents\\Desarrollo S\\P_Tarea_Dulcefacil\\DulcefacilAPI\\Dulcefacil.Infraestructura.AccesoDatos\\Dulcefacil.Infraestructura.AccesoDatos.csproj",
+  "projectFilePath": "C:\\Users\\Elian\\Documents\\Desarrollo S\\P_Tarea_Dulcefacil\\DulceFacilAPI\\Dulcefacil.Infraestructura.AccesoDatos\\Dulcefacil.Infraestructura.AccesoDatos.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Elian\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\Elian\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",

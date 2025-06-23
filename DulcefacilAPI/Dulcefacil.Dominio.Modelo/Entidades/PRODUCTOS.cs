@@ -5,17 +5,17 @@ using System.Collections.Generic;
 
 namespace Dulcefacil.Infraestructura.AccesoDatos;
 
-public partial class PRODUCTOS
+public partial class Productos
 {
-    public int id_producto { get; set; }
+    public int ID_Producto { get; set; }
 
-    public string nombre { get; set; }
+    public string NombreProducto { get; set; }
 
-    public string descripcion { get; set; }
+    public string Descripción { get; set; }
 
-    public string categoria { get; set; }
+    public int Stock { get; set; }
 
-    public virtual ICollection<DETALLE> DETALLE { get; set; } = new List<DETALLE>();
+    public virtual ICollection<Detalle_Pedido> Detalle_Pedido { get; set; } = new List<Detalle_Pedido>();
 
-    public virtual ICollection<PRECIOS> PRECIOS { get; set; } = new List<PRECIOS>();
+    public virtual ICollection<PrecioProducto> PrecioProducto { get; set; } = new List<PrecioProducto>();
 }

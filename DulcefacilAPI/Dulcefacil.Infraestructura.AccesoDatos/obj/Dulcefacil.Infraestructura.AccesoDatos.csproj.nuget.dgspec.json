@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Elian\\Documents\\Desarrollo S\\P_Tarea_Dulcefacil\\DulcefacilAPI\\Dulcefacil.Infraestructura.AccesoDatos\\Dulcefacil.Infraestructura.AccesoDatos.csproj": {}
+    "C:\\Users\\Elian\\Documents\\Desarrollo S\\P_Tarea_Dulcefacil\\DulceFacilAPI\\Dulcefacil.Infraestructura.AccesoDatos\\Dulcefacil.Infraestructura.AccesoDatos.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Elian\\Documents\\Desarrollo S\\P_Tarea_Dulcefacil\\DulcefacilAPI\\Dulcefacil.Dominio.Modelo\\Dulcefacil.Dominio.Modelo.csproj": {
+    "C:\\Users\\Elian\\Documents\\Desarrollo S\\P_Tarea_Dulcefacil\\DulceFacilAPI\\Dulcefacil.Dominio.Modelo\\Dulcefacil.Dominio.Modelo.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Elian\\Documents\\Desarrollo S\\P_Tarea_Dulcefacil\\DulcefacilAPI\\Dulcefacil.Dominio.Modelo\\Dulcefacil.Dominio.Modelo.csproj",
+        "projectUniqueName": "C:\\Users\\Elian\\Documents\\Desarrollo S\\P_Tarea_Dulcefacil\\DulceFacilAPI\\Dulcefacil.Dominio.Modelo\\Dulcefacil.Dominio.Modelo.csproj",
         "projectName": "Dulcefacil.Dominio.Modelo",
-        "projectPath": "C:\\Users\\Elian\\Documents\\Desarrollo S\\P_Tarea_Dulcefacil\\DulcefacilAPI\\Dulcefacil.Dominio.Modelo\\Dulcefacil.Dominio.Modelo.csproj",
+        "projectPath": "C:\\Users\\Elian\\Documents\\Desarrollo S\\P_Tarea_Dulcefacil\\DulceFacilAPI\\Dulcefacil.Dominio.Modelo\\Dulcefacil.Dominio.Modelo.csproj",
         "packagesPath": "C:\\Users\\Elian\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Elian\\Documents\\Desarrollo S\\P_Tarea_Dulcefacil\\DulcefacilAPI\\Dulcefacil.Dominio.Modelo\\obj\\",
+        "outputPath": "C:\\Users\\Elian\\Documents\\Desarrollo S\\P_Tarea_Dulcefacil\\DulceFacilAPI\\Dulcefacil.Dominio.Modelo\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -69,14 +69,14 @@
         }
       }
     },
-    "C:\\Users\\Elian\\Documents\\Desarrollo S\\P_Tarea_Dulcefacil\\DulcefacilAPI\\Dulcefacil.Dominio.Servicio\\Dulcefacil.Dominio.Servicio.csproj": {
+    "C:\\Users\\Elian\\Documents\\Desarrollo S\\P_Tarea_Dulcefacil\\DulceFacilAPI\\Dulcefacil.Dominio.Servicio\\Dulcefacil.Dominio.Servicio.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Elian\\Documents\\Desarrollo S\\P_Tarea_Dulcefacil\\DulcefacilAPI\\Dulcefacil.Dominio.Servicio\\Dulcefacil.Dominio.Servicio.csproj",
+        "projectUniqueName": "C:\\Users\\Elian\\Documents\\Desarrollo S\\P_Tarea_Dulcefacil\\DulceFacilAPI\\Dulcefacil.Dominio.Servicio\\Dulcefacil.Dominio.Servicio.csproj",
         "projectName": "Dulcefacil.Dominio.Servicio",
-        "projectPath": "C:\\Users\\Elian\\Documents\\Desarrollo S\\P_Tarea_Dulcefacil\\DulcefacilAPI\\Dulcefacil.Dominio.Servicio\\Dulcefacil.Dominio.Servicio.csproj",
+        "projectPath": "C:\\Users\\Elian\\Documents\\Desarrollo S\\P_Tarea_Dulcefacil\\DulceFacilAPI\\Dulcefacil.Dominio.Servicio\\Dulcefacil.Dominio.Servicio.csproj",
         "packagesPath": "C:\\Users\\Elian\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Elian\\Documents\\Desarrollo S\\P_Tarea_Dulcefacil\\DulcefacilAPI\\Dulcefacil.Dominio.Servicio\\obj\\",
+        "outputPath": "C:\\Users\\Elian\\Documents\\Desarrollo S\\P_Tarea_Dulcefacil\\DulceFacilAPI\\Dulcefacil.Dominio.Servicio\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -134,14 +134,14 @@
         }
       }
     },
-    "C:\\Users\\Elian\\Documents\\Desarrollo S\\P_Tarea_Dulcefacil\\DulcefacilAPI\\Dulcefacil.Infraestructura.AccesoDatos\\Dulcefacil.Infraestructura.AccesoDatos.csproj": {
+    "C:\\Users\\Elian\\Documents\\Desarrollo S\\P_Tarea_Dulcefacil\\DulceFacilAPI\\Dulcefacil.Infraestructura.AccesoDatos\\Dulcefacil.Infraestructura.AccesoDatos.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Elian\\Documents\\Desarrollo S\\P_Tarea_Dulcefacil\\DulcefacilAPI\\Dulcefacil.Infraestructura.AccesoDatos\\Dulcefacil.Infraestructura.AccesoDatos.csproj",
+        "projectUniqueName": "C:\\Users\\Elian\\Documents\\Desarrollo S\\P_Tarea_Dulcefacil\\DulceFacilAPI\\Dulcefacil.Infraestructura.AccesoDatos\\Dulcefacil.Infraestructura.AccesoDatos.csproj",
         "projectName": "Dulcefacil.Infraestructura.AccesoDatos",
-        "projectPath": "C:\\Users\\Elian\\Documents\\Desarrollo S\\P_Tarea_Dulcefacil\\DulcefacilAPI\\Dulcefacil.Infraestructura.AccesoDatos\\Dulcefacil.Infraestructura.AccesoDatos.csproj",
+        "projectPath": "C:\\Users\\Elian\\Documents\\Desarrollo S\\P_Tarea_Dulcefacil\\DulceFacilAPI\\Dulcefacil.Infraestructura.AccesoDatos\\Dulcefacil.Infraestructura.AccesoDatos.csproj",
         "packagesPath": "C:\\Users\\Elian\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Elian\\Documents\\Desarrollo S\\P_Tarea_Dulcefacil\\DulcefacilAPI\\Dulcefacil.Infraestructura.AccesoDatos\\obj\\",
+        "outputPath": "C:\\Users\\Elian\\Documents\\Desarrollo S\\P_Tarea_Dulcefacil\\DulceFacilAPI\\Dulcefacil.Infraestructura.AccesoDatos\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -162,11 +162,11 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\Elian\\Documents\\Desarrollo S\\P_Tarea_Dulcefacil\\DulcefacilAPI\\Dulcefacil.Dominio.Modelo\\Dulcefacil.Dominio.Modelo.csproj": {
-                "projectPath": "C:\\Users\\Elian\\Documents\\Desarrollo S\\P_Tarea_Dulcefacil\\DulcefacilAPI\\Dulcefacil.Dominio.Modelo\\Dulcefacil.Dominio.Modelo.csproj"
+              "C:\\Users\\Elian\\Documents\\Desarrollo S\\P_Tarea_Dulcefacil\\DulceFacilAPI\\Dulcefacil.Dominio.Modelo\\Dulcefacil.Dominio.Modelo.csproj": {
+                "projectPath": "C:\\Users\\Elian\\Documents\\Desarrollo S\\P_Tarea_Dulcefacil\\DulceFacilAPI\\Dulcefacil.Dominio.Modelo\\Dulcefacil.Dominio.Modelo.csproj"
               },
-              "C:\\Users\\Elian\\Documents\\Desarrollo S\\P_Tarea_Dulcefacil\\DulcefacilAPI\\Dulcefacil.Dominio.Servicio\\Dulcefacil.Dominio.Servicio.csproj": {
-                "projectPath": "C:\\Users\\Elian\\Documents\\Desarrollo S\\P_Tarea_Dulcefacil\\DulcefacilAPI\\Dulcefacil.Dominio.Servicio\\Dulcefacil.Dominio.Servicio.csproj"
+              "C:\\Users\\Elian\\Documents\\Desarrollo S\\P_Tarea_Dulcefacil\\DulceFacilAPI\\Dulcefacil.Dominio.Servicio\\Dulcefacil.Dominio.Servicio.csproj": {
+                "projectPath": "C:\\Users\\Elian\\Documents\\Desarrollo S\\P_Tarea_Dulcefacil\\DulceFacilAPI\\Dulcefacil.Dominio.Servicio\\Dulcefacil.Dominio.Servicio.csproj"
               }
             }
           }
@@ -196,6 +196,8 @@
               "version": "[9.0.6, )"
             },
             "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
               "target": "Package",
               "version": "[9.0.6, )"
             }

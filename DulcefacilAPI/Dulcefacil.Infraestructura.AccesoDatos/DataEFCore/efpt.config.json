@@ -6,7 +6,7 @@
    "IncludeConnectionString": true,
    "ModelNamespace": null,
    "OutputContextPath": null,
-   "OutputPath": "C:\\Users\\Elian\\Documents\\Desarrollo S\\P_Tarea_Dulcefacil\\DulcefacilAPI\\Dulcefacil.Dominio.Modelo\\Entidades",
+   "OutputPath": "C:\\Users\\Elian\\Documents\\Desarrollo S\\P_Tarea_Dulcefacil\\DulceFacilAPI\\Dulcefacil.Dominio.Modelo\\Entidades",
    "PreserveCasingWithRegex": true,
    "ProjectRootNamespace": "Dulcefacil.Infraestructura.AccesoDatos",
    "Schemas": null,
@@ -15,51 +15,51 @@
    "T4TemplatePath": null,
    "Tables": [
       {
-         "Name": "[dbo].[ACTIVIDAD]",
+         "Name": "[dbo].[Clientes]",
          "ObjectType": 0
       },
       {
-         "Name": "[dbo].[CONTACTO]",
+         "Name": "[dbo].[Detalle_Pedido]",
          "ObjectType": 0
       },
       {
-         "Name": "[dbo].[DETALLE]",
+         "Name": "[dbo].[Entregas]",
          "ObjectType": 0
       },
       {
-         "Name": "[dbo].[EMPRESA]",
+         "Name": "[dbo].[Pedidos]",
          "ObjectType": 0
       },
       {
-         "Name": "[dbo].[NOTIFICACION]",
+         "Name": "[dbo].[PrecioProducto]",
          "ObjectType": 0
       },
       {
-         "Name": "[dbo].[PRECIOS]",
+         "Name": "[dbo].[Productos]",
          "ObjectType": 0
       },
       {
-         "Name": "[dbo].[PRODUCTOS]",
+         "Name": "[dbo].[Roles]",
          "ObjectType": 0
       },
       {
-         "Name": "[dbo].[ROLES]",
+         "Name": "[dbo].[Ruta_Pedido]",
          "ObjectType": 0
       },
       {
-         "Name": "[dbo].[USUARIO]",
+         "Name": "[dbo].[Rutas]",
          "ObjectType": 0
       },
       {
-         "Name": "[dbo].[USUARIO_ROL]",
+         "Name": "[dbo].[TipoCliente]",
          "ObjectType": 0
       },
       {
-         "Name": "[dbo].[VENDEDOR]",
+         "Name": "[dbo].[Usuarios]",
          "ObjectType": 0
       },
       {
-         "Name": "[dbo].[VENTA]",
+         "Name": "[dbo].[Zonas]",
          "ObjectType": 0
       }
    ],
